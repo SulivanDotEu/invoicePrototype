@@ -1,0 +1,12 @@
+{# flashbag \Symfony\Component\HttpFoundation\Session\Flash\FlashBag #}
+{% set flashbag = app.session.flashbag %}
+
+{% for type, messages in flashbag.all() %}
+
+    {% for message in messages %}
+        <div class="alert alert-{{ type|lower }}" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+{% endfor %}

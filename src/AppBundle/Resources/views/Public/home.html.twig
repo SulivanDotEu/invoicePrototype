@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1>Manage your invoices online!</h1>
+
+        <p class="lead">
+            Business hours :
+            week day from 8am to 6pm.
+        </p>
+
+        <p><a class="btn btn-lg btn-success" href="{{ path("send_invoice") }}" role="button">Send invoice today</a></p>
+    </div>
+
+    <div class="row marketing">
+        <div class="col-lg-6">
+            <h4>Customer mode</h4>
+
+            <p>Send your invoices online, our team will valid them and process it as soon as possible (regarding
+                business hours).
+            </p>
+
+            <ul>
+                <li>Send invoices</li>
+                <li><i>log in?</i></li>
+            </ul>
+
+            <h4>System mode</h4>
+
+            <ul>
+                <li>Send email with delay</li>
+            </ul>
+
+        </div>
+
+        <div class="col-lg-6">
+            <h4>Admin mode</h4>
+
+            <ul>
+                <li>login</li>
+                <li>view all invoices</li>
+                <li>view detail of an invoice</li>
+                <li>Approve invoice</li>
+                <li>Test sending time</li>
+                <li><i>edit invoice?</i></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
