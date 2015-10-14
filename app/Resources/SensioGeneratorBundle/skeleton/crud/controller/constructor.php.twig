@@ -1,0 +1,20 @@
+
+
+function __construct() {
+    $this->setRoutes(array(
+        self::$ROUTE_INDEX_ADD => '{{ route_name_prefix }}_new',
+        self::$ROUTE_INDEX_INDEX => '{{ route_name_prefix }}',
+        self::$ROUTE_INDEX_DELETE => '{{ route_name_prefix }}_show',
+        self::$ROUTE_INDEX_EDIT => '{{ route_name_prefix }}_edit',
+        self::$ROUTE_INDEX_SHOW => '{{ route_name_prefix }}_show',
+    ));
+
+    $this->setLayoutPath('{{ bundle }}:{{ entity }}:layout.html.twig');
+    $this->setIndexPath("{{ bundle }}:{{ entity }}:index.html.twig");
+    $this->setShowPath("{{ bundle }}:{{ entity }}:show.html.twig");
+    $this->setEditPath("{{ bundle }}:{{ entity }}:edit.html.twig");
+
+    $this->setColumnsHeader(array(
+        "Id",
+        ));
+}

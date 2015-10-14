@@ -1,0 +1,6 @@
+
+
+public function getRepository() {
+        $em = $this->getDoctrine()->getManager();
+        return $em->getRepository('{{ bundle }}:{{ entity }}');
+    }

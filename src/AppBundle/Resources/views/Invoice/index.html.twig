@@ -1,0 +1,27 @@
+{% extends  'WalvaCrudAdminBundle:Crud:index.html.twig' %}
+{# entity \AppBundle\Entity\Invoice #}
+
+
+{% block crud_table_header %}
+    <th>Id</th>
+    <th>Reference</th>
+    <th>Amount</th>
+    <th>Status</th>
+    <th>Action</th>
+{% endblock %}
+
+{% block crud_table_row_content %}
+    <td><a href="{{ path(routeShow, { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+    <td>{{ entity.reference }}</td>
+    <td>{{ entity.amount }}</td>
+    <td>{{ entity.status }}</td>
+{% endblock %}
+
+
+{% block actions %}
+<div class="btn-group">
+    <a href="{{ path(routeShow, { 'id': entity.id }) }}" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-new-window"></span> Show</a>
+    <a href="{{ path(routeEdit, { 'id': entity.id }) }}" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+</div>
+{% endblock %}
+

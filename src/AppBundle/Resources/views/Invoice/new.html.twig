@@ -1,0 +1,16 @@
+{% extends  'WalvaCrudAdminBundle:Crud:new.html.twig' %}
+
+{% form_theme form "bootstrap_3_horizontal_layout.html.twig" %}
+
+
+{% block content -%}
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_invoice') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

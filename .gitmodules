@@ -1,0 +1,3 @@
+[submodule "src/Walva/CrudAdminBundle"]
+	path = src/Walva/CrudAdminBundle
+	url = https://github.com/SulivanDotEu/CrudAdminBundle.git
