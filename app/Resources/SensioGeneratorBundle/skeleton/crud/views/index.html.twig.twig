@@ -1,0 +1,23 @@
+{% extends "skeleton/crud/views/index.html.twig.twig" %}
+
+{% block extends %}
+{{ "{% extends  'WalvaCrudAdminBundle:Crud:index.html.twig' %}" }}
+{% endblock extends %}
+
+
+
+{% block body %}
+    
+{{ "{% block crud_table_row_content %}" }}
+    <td><a href="{{ "{{ path(routeShow, { 'id': entity.id }) }}" }}">{{ "{{ entity.id }}" }}</a></td>
+{{ "{% endblock %}" }}
+
+
+{{ "{% block actions %}" }}
+<div class="btn-group">
+    <a href="{{ "{{ path(routeShow, { 'id': entity.id }) }}" }}" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-new-window"></span> Show</a>
+    <a href="{{ "{{ path(routeEdit, { 'id': entity.id }) }}" }}" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+</div>
+{{ "{% endblock %}" }}
+
+{% endblock body %}

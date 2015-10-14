@@ -1,0 +1,10 @@
+{% extends  "::admin.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li class=""><a href="{{ path("admin_invoice") }}">Invoice</a></li>
+{% endblock %}
+
+{% block header_title %}
+    <span class="glyphicon glyphicon-play-circle"></span> Invoice
+{% endblock %}

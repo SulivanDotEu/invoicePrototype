@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">-->
+
+    <title>{% block page_title %}ADMINISTRATION{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="">
+    {% block stylesheets %}
+        <link href="{{ asset('bundles/app/admin.css') }}" type="text/css" rel="stylesheet"/>
+        {#<link href="fix-form-bs3.css" type="text/css" rel="stylesheet"/>#}
+    {% endblock %}
+
+</head>
+
+<body style="margin-top: 40px;">
+<div class="navbar navbar-fixed-top navbar-inverse active admin-nav" role="navigation"
+     style="border-color: #357536; background-color: #468847; box-shadow: 0 1px 0 rgba(255,255,255,.1); ">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Invoice prototype</a>
+        </div>
+        {#{% include 'crud_nav_admin.html.twig' %}#}
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                {% block topbarmenu %}
+                    {% include 'nav_content.html.twig' %}
+                {% endblock %}
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
+
+<div class="admin-header" id="content" style="">
+    {% block header %}
+        <div class="container">
+
+            <h1>{% block header_title %}Getting started{% endblock %}</h1>
+
+            <p>{% block header_subtitle %}{% endblock %}</p>
+
+        </div>
+    {% endblock %}
+</div>
+
+<div class="bs-old-docs">
+    <div class="container">
+        <ol class="breadcrumb admin-breadcrumb">
+            {% block breadcrumb %}
+                <li><a href="{{ path('homepage') }}">Prototype</a></li>
+                <li><a href="{{ path('admin_invoice') }}">Administration</a></li>
+            {% endblock %}
+        </ol>
+    </div>
+</div>
+
+
+{% block body_container %}
+    <div class="container admin-main-container">
+        {% include "flash.html.twig" %}
+
+        {% block body %}
+            <div class="row ">
+                {% block leftmenu_container %}
+                    <div class=" col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                        <div class="list-group">
+                            {% block leftmenu %}
+                                <a href="#" class="list-group-item active">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                                <a href="#" class="list-group-item">Link</a>
+                            {% endblock %}
+                        </div>
+                    </div><!--/span-->
+                {% endblock %}
+
+                <div class="col-xs-12 col-sm-9">
+                    {% block content %}
+
+                        <div class="jumbotron">
+                            <h1>Hello, world!</h1>
+
+                            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try
+                                some responsive-range viewport sizes to see it in action.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-sm-6 col-lg-4">
+                                <h2>Heading</h2>
+
+                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                                    commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+                                    porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                            </div>
+                            <!--/span-->
+                            <div class="col-6 col-sm-6 col-lg-4">
+                                <h2>Heading</h2>
+
+                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                                    commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+                                    porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                            </div>
+                            <!--/span-->
+                            <div class="col-6 col-sm-6 col-lg-4">
+                                <h2>Heading</h2>
+
+                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                                    commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+                                    porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                            </div>
+                            <!--/span-->
+                            <div class="col-6 col-sm-6 col-lg-4">
+                                <h2>Heading</h2>
+
+                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                                    commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+                                    porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                            </div>
+                            <!--/span-->
+                            <div class="col-6 col-sm-6 col-lg-4">
+                                <h2>Heading</h2>
+
+                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                                    commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+                                    porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                            </div>
+                            <!--/span-->
+                            <div class="col-6 col-sm-6 col-lg-4">
+                                <h2>Heading</h2>
+
+                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                                    commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam
+                                    porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                            </div>
+                            <!--/span-->
+                        </div><!--/row-->
+                    {% endblock %}
+                </div>
+                <!--/span-->
+
+
+            </div><!--/row-->
+        {% endblock %}
+        <hr>
+
+        <footer>
+            <p>&copy; Company 2013</p>
+        </footer>
+
+    </div>
+{% endblock %}
+<!--/.container-->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+{% endblock %}
+
+</body>
+</html>

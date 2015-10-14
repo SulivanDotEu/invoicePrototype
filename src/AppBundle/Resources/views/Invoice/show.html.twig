@@ -1,0 +1,67 @@
+{% extends  'WalvaCrudAdminBundle:Crud:show.html.twig' %}
+{# entity \AppBundle\Entity\Invoice #}
+
+{% block crud_table_body -%}
+    <tr>
+        <th>Id</th>
+        <td>{{ entity.id }}</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>{{ entity.status }}</td>
+    </tr>
+    <tr>
+        <th>Due date</th>
+        <td>{{ entity.dueDate|date('Y-m-d H:i:s') }}</td>
+    </tr>
+    <tr>
+        <th>Amount</th>
+        <td>{{ entity.amount }}</td>
+    </tr>
+    <tr>
+        <th>Reference</th>
+        <td>{{ entity.reference }}</td>
+    </tr>
+    <tr>
+        <th>Selleremail</th>
+        <td>{{ entity.sellerEmail }}</td>
+    </tr>
+    <tr>
+        <th>Debtoremail</th>
+        <td>{{ entity.debtorEmail }}</td>
+    </tr>
+    <tr>
+        <th>Sent</th>
+        <td>
+            {% if entity.sent %}
+                YES
+            {% else %}
+                NO
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <th>Sendemailafter</th>
+        <td>
+            {% if entity.sentDate is not null %}
+            {{ entity.sentDate|date('Y-m-d H:i:s') }}
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <th>Sent date</th>
+        <td>
+            {% if entity.sentDate is not null %}
+            {{ entity.sentDate|date('Y-m-d H:i:s') }}
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <th>Action</th>
+        <td>
+            <a class="btn btn-primary" href="{{ path('admin_invoice_approve', {'invoice': entity.id}) }}">
+                Approve
+            </a>
+        </td>
+    </tr>
+{% endblock %}

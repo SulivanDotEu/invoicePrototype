@@ -1,0 +1,17 @@
+{#<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-futbol-o"></i> Sport <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href="{{ path('sport') }}"><i class="fa fa-futbol-o"></i> Sport</a></li>
+        <li><a href="{{ path('sport_description') }}"><span class="glyphicon glyphicon-info-sign"></span> Sport Description</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ path('owner') }}"><i class="fa fa-university"></i> Owner</a></li>
+        <li><a href="{{ path('center') }}"><i class="glyphicon glyphicon-map-marker"></i> Center</a></li>
+        <li><a href="{{ path('center_description') }}"><i class="glyphicon glyphicon-info-sign"></i> Center Description</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ path('field') }}"><span class="glyphicon glyphicon-map-marker"></span>  Field</a></li>
+        <li><a href="{{ path('field_description') }}"><span class="glyphicon glyphicon-info-sign"></span>  Field Description</a></li>
+    </ul>
+</li>#}
+
+<li><a href="{{ path('homepage') }}"><i class="fa fa-globe"></i> Website</a></li>
+<li><a href="{{ path('test_hours') }}"><i class="fa fa-clock-o"></i> Test hours</a></li>
